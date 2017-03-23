@@ -1,4 +1,5 @@
 class ChatRoomsController < ApplicationController
+  load_and_authorize_resource
   def index
     @chat_rooms = ChatRoom.all
   end

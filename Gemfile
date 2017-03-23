@@ -18,6 +18,7 @@ gem 'sass-rails', github: "rails/sass-rails"
 # Ue devise for authorization
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'cancancan'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

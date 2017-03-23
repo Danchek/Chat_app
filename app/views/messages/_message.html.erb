@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" id="message_block_<%= message.id %>">
   <div class="card-block">
     <div class="row">
       <div class="col-md-1">
@@ -7,8 +7,14 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
+          <span id='message_<%= message.id %>'><%= message.body %></span>
         </p>
+      </div>
+      <div>
+        <% if current_user.id == message.user.id %>
+          <button id="button_<%= message.id %>" type="submit" class="button_edit" data-message-id="<%= message.id %>">Edit</button>
+          <button id="button_deleted_<%= message.id %>" type="submit" class="button_delete" data-message-id="<%= message.id %>">Delete</button>
+        <% end %>
       </div>
     </div>
   </div>
