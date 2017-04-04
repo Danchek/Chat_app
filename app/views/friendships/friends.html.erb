@@ -3,5 +3,6 @@
   <%= bootstrap_form_tag(url: remove_friend_path(user), method: :delete) do %>
     <%= render partial: 'friendships/user', locals: { user: user} %>
     <%= submit_tag('Delete from friends', class: 'btn btn-primary') %>
+    <%= link_to 'User info', user_path(user), class: 'btn btn-primary btn-sm' %>
   <% end %>
 <% end %>

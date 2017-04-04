@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  validates :nickname, presence: true
+  validates :sex, inclusion: { in: ['', 'Female', 'Male'] }
+
   def name
     email.split('@')[0]
   end

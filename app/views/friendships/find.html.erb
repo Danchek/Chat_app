@@ -3,5 +3,6 @@
     <%= bootstrap_form_tag(url: add_friend_path(user), method: :post) do %>
         <%= render partial: 'friendships/user', locals: { user: user} %>
         <%= submit_tag('Add to friends', class: 'btn btn-primary btn-sm') %>
+        <%= link_to 'User info', user_path(user), class: 'btn btn-primary btn-sm' %>
     <% end %>
 <% end %>

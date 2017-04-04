@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'chat_rooms#index'
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'users/registrations'}
   resources :chat_rooms, only: [:new, :create, :show, :index]
+  resources :users, only: :show
 
   scope :friends do
     get '/find', to: 'friendships#find', as: 'friends_find'
