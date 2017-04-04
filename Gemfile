@@ -15,10 +15,18 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', github: "rails/sass-rails"
 
-# Ue devise for authorization
+# Use devise for authorization
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'cancancan'
+# Use carrierwave for uploading avatars
+gem 'carrierwave', '~> 1.0'
+
+gem 'bootstrap_form'
+gem 'has_friendship'
+
+
+gem 'react-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

@@ -1,0 +1,97 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600";
+@import "netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css";
+
+.testbox {
+
+  margin: 20px auto;
+  width: 343px;
+  height: 500px;
+  -webkit-border-radius: 8px/7px;
+  -moz-border-radius: 8px/7px;
+  border-radius: 8px/7px;
+  background-color: #ebebeb;
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+  -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+  border: solid 1px #cbc9c9;
+
+  :focus {
+    outline: none
+  }
+
+  input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  h2.reg-form {
+    font-size: 24px;
+    font-weight: 300;
+    color: #4c4c4c;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  form {
+    margin: 0 65px;
+  }
+
+  hr {
+    color: #a9a9a9;
+    opacity: 0.3;
+  }
+
+  input[type=text], input[type=password], input[type=email] {
+    width: 200px;
+    height: 39px;
+    -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+    -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+    border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    border: solid 1px #cbc9c9;
+    padding-left: 10px;
+  }
+
+  input[type=password], input[type=email] {
+    margin-bottom: 25px;
+  }
+
+  .icon-registration {
+    display: inline-block;
+    width: 30px;
+    background-color: #3a57af;
+    padding: 8px 0px 8px 15px;
+    margin-left: 15px;
+    -webkit-border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0px 0px 4px;
+    color: white;
+    -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+    border: solid 0px #cbc9c9;
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .reg-new-link {
+    padding-top: 8px;
+    text-align: center;
+  }
+
+  div.has-error {
+    input {
+      border: solid 1px #B22222;
+    }
+  }
+}
+
+.reg-link {
+  padding-top: 18px;
+  text-align: center;
+}
