@@ -1,9 +1,12 @@
 <h1>Add chat room</h1>
 
-<%= form_for @chat_room do |f| %>
+<%= bootstrap_form_for @chat_room do |f| %>
     <div class="form-group">
-      <%= f.label :title %>
       <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= f.select :chat_type, [['Public chat', 'public_chat'], ['Group chat', 'group_chat']] %>
     </div>
 
     <%= f.submit "Add!", class: 'btn btn-primary' %>
