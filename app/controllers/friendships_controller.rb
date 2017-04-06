@@ -10,6 +10,13 @@ class FriendshipsController < ApplicationController
     @users = current_user.friends
   end
 
+  def add_friend_to_chat
+    friends = current_user.friends
+    chat_room = ChatRoom.find(params[:id])
+    @users = friends - chat_room.user
+    render partial: 'friendships/friends_for_chat'
+  end
+
   def add_friend
     current_user.friend_request(@friend)
     redirect_back(fallback_location: root_path)

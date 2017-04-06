@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :chat_rooms, dependent: :destroy
+  has_and_belongs_to_many :chat_rooms
   has_many :messages, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405083803) do
+ActiveRecord::Schema.define(version: 20170405105224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20170405083803) do
     t.datetime "updated_at", null: false
     t.string "chat_type"
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
+  end
+
+  create_table "chat_rooms_users", force: :cascade do |t|
+    t.bigint "chat_room_id"
+    t.bigint "user_id"
+    t.index ["chat_room_id"], name: "index_chat_rooms_users_on_chat_room_id"
+    t.index ["user_id"], name: "index_chat_rooms_users_on_user_id"
   end
 
   create_table "friendships", force: :cascade do |t|

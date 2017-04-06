@@ -8,9 +8,12 @@ class Ability
       can :read, :all
     else
       user ||= User.new
-      can :read, :all
+      can :read, ChatRoom, user_id: user.id
+      can :read, ChatRoom, chat_type: 'public_chat'
+      # TODO add read ability for group chat where user take part
       can :create, :all
       can :edit, [Message, ChatRoom], user_id: user.id
+      can :edit, ChatRoom, chat_type: 'public_chat'
       can :update, [Message, ChatRoom], user_id: user.id
       can :destroy, [Message, ChatRoom], user_id: user.id
     end
