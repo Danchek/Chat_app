@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row modal-add-friend">
   <div class="col-md-1">
-    <%= gravatar_for user %>
+    <%= image_tag(user.avatar(:thumb), width: 42, height: 42) %>
   </div>
-  <div>
+  <div class="col-md-2">
     <%= user.name %>
   </div>
 </div>

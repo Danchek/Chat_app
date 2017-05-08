@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'chat_rooms#index'
-  devise_for :users, controllers: {registrations: 'users/registrations'}
+  devise_for :users, controllers: {registrations: 'registrations'}
   resources :chat_rooms do
     member do
       scope :user_add do
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get '', to: 'friendships#friends', as: 'friends'
     get '/pending_requests', to: 'friendships#pending_requests', as: 'friends_pending_requests'
     get '/user_request', to: 'friendships#user_request', as: 'friends_user_request'
-    get '/for_chat', to: 'friendships#add_friend_to_chat', as: 'friend_for_chat'
+    get '/for_chat', to: 'friendships#get_friends_for_chat', as: 'friend_for_chat'
   end
   scope :friend do
     patch '/update_request/:friend_id', to: 'friendships#change_request_status', as: 'friend_update_request'

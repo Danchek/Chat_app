@@ -2,6 +2,7 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
+    puts message
     if message.instance_of? Message
       ActionCable.server.broadcast "chat_rooms_#{message.chat_room.id}_channel",
                                    message: render_message(message),

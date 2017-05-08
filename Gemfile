@@ -19,8 +19,8 @@ gem 'sass-rails', github: "rails/sass-rails"
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'cancancan'
-# Use carrierwave for uploading avatars
-gem 'carrierwave', '~> 1.0'
+# Use paperclip for uploading avatars
+gem 'paperclip', '~> 5.0.0'
 
 gem 'bootstrap_form'
 gem 'has_friendship'
@@ -59,6 +59,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'pry'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

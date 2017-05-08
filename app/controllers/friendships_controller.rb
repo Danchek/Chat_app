@@ -10,10 +10,8 @@ class FriendshipsController < ApplicationController
     @users = current_user.friends
   end
 
-  def add_friend_to_chat
-    friends = current_user.friends
-    chat_room = ChatRoom.find(params[:id])
-    @users = friends - chat_room.user
+  def get_friends_for_chat
+    @users = current_user.friends - ChatRoom.find(params[:id]).user
     render partial: 'friendships/friends_for_chat'
   end
 

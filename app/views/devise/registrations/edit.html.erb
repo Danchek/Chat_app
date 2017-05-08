@@ -45,10 +45,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= f.file_field :avatar, id: 'pictureInput' %>
     <br />
+    <div id="target">
+      <%= image_tag(@user.avatar.url(:medium)) %>
+    </div>
     <br />
   </div>
 
@@ -62,11 +63,6 @@
 
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off", hide_label: true %>
   </div>
 
   <div class="actions">
