@@ -12,5 +12,5 @@
           %span{:id => "message_#{message.id}"}= message.body
       %div
         - if current_user.id == message.user.id
-          %button.button_edit{"data-message-id" => "#{message.id}", :id => "button_#{message.id}", :type => "submit"} Edit
-          %button.button_delete{"data-message-id" => "#{message.id}", :id => "button_deleted_#{message.id}", :type => "submit"} Delete
+          %button.button_edit{'data-message-id' => "#{message.id}", :id => "button_#{message.id}", :type => 'submit'} Edit
+          %button.button_delete{'data-message-id' => "#{message.id}", :id => "button_deleted_#{message.id}", :type => 'submit'} Delete

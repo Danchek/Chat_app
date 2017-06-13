@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'chat_rooms#index'
-  devise_for :users, controllers: {registrations: 'registrations'}
+  resources :users, only: :show
+  resources :friends, only: [:index, :destroy, :new]
+  resources :friendship_requests, only: [:index, :update]
+  post 'friendship_request/:id', to: 'friendship_requests#create',
+       as: 'friendship_request_create'
   resources :chat_rooms do
     member do
       scope :user_add do
@@ -8,19 +12,10 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only: :show
 
+  devise_for :users, controllers: {registrations: 'registrations'}
   scope :friends do
-    get '/find', to: 'friendships#find', as: 'friends_find'
-    get '', to: 'friendships#friends', as: 'friends'
-    get '/pending_requests', to: 'friendships#pending_requests', as: 'friends_pending_requests'
-    get '/user_request', to: 'friendships#user_request', as: 'friends_user_request'
-    get '/for_chat', to: 'chat_rooms_users#get_friends_for_chat', as: 'friend_for_chat'
-  end
-  scope :friend do
-    patch '/update_request/:friend_id', to: 'friendships#change_request_status', as: 'friend_update_request'
-    post '/add/:friend_id', to: 'friendships#add_friend', as: 'add_friend'
-    delete '/remove/:friend_id', to: 'friendships#remove_friend', as: 'remove_friend'
+    get '/for_chat', to: 'chat_rooms_users#index', as: 'friends_for_chat'
   end
 
 

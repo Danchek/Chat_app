@@ -1,0 +1,22 @@
+%h1= @chat_room.title
+#messages{'data-chat-room-id': "#{@chat_room.id}"}
+  = render @chat_room.messages
+= form_for @message, url: '#' do |f|
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: 'form-control', 'data-message-id' => ''
+    %small.text-muted From 2 to 1000 characters
+  = f.submit 'Post', class: 'btn btn-primary btn-lg'
+%button#modal_btn.btn.btn-info.btn-lg{'data-id' => "#{@chat_room.id}", 'data-target' => '#myModal', 'data-toggle' => 'modal', type: 'button'} Add friend to chat
+/ Modal
+#myModal.modal.fade{:role => 'dialog'}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        %button.close{'data-dismiss': 'modal', type: 'button'} ×
+        %h4.modal-title Choose friend to add to chat
+      #chat_modal_body.modal-body
+        %p Select your friend:
+      .modal-footer
+        %button.btn.btn-default{'data-dismiss' => 'modal', :type => 'button'} Close

@@ -1,6 +1,6 @@
 %h1 Your friends
 - @users.each do |user|
-  = bootstrap_form_tag(url: remove_friend_path(user), method: :delete) do
+  = bootstrap_form_tag(url: friend_path(user), method: :delete) do
     = render partial: 'users/user', locals: { user: user }
     = submit_tag('Delete from friends', class: 'btn btn-primary')
     = link_to 'User info', user_path(user), class: 'btn btn-primary btn-sm'

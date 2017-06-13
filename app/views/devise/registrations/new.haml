@@ -4,10 +4,10 @@
     %hr/
     = f.email_field :email, autofocus: true, required: true
     = f.text_field :nickname, required:true
-    = f.password_field :password, autocomplete: "off", required: true
-    = f.password_field :password_confirmation, autocomplete: "off", required: true
+    = f.password_field :password, autocomplete: 'off', required: true
+    = f.password_field :password_confirmation, autocomplete: 'off', required: true
     %hr/
     .actions
-      = f.submit "Sign up", class: 'btn-reg-new btn btn-primary'
+      = f.submit 'Sign up', class: 'btn-reg-new btn btn-primary'
   .reg-new-link
-    = render "devise/shared/links"
+    = render 'devise/shared/links'

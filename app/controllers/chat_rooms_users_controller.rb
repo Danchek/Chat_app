@@ -10,7 +10,7 @@ class ChatRoomsUsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def get_friends_for_chat
+  def index
     @chat_room = ChatRoom.find(params[:id])
     @users = current_user.friends - @chat_room.user
     render partial: 'friends_for_chat'

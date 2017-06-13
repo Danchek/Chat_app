@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function() {
             var dataId = {'id': $(this).attr('data-id').toString()};
             $.ajax({
                 type: "GET",
-                url: '/friends/for_chat',
+                url: '/friends',
                 data: dataId
             }).success(function (html) {
                 $('#chat_modal_body').html(html);
