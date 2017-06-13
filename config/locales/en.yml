@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  header:
+    hello: "Hello world"
+    home: "Home"
+    help: "Help"
+    show_friends: "Show friends"
+    friends: "Friends"
+    find_friends: "Find friends"
+    pending_requests: "Pending requests"
+    your_requests: "Your requests"
+    account: "Account"
+    profile: "Profile"
+    settings: "Settings"
+    sign_out: "Sign out"
+    sign_in: "Sign in"

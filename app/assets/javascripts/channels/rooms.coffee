@@ -17,7 +17,6 @@ jQuery(document).on 'turbolinks:load', ->
 
       received: (data) ->
         if data['action'] == 'edit'
-          debugger;
           message_body = $('#message_body')
           message_body.val(data['edit_body'])
           message_body.addClass('update_message')

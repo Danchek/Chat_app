@@ -1,7 +1,0 @@
-<h1>Your requests:</h1>
-<% @users.each do |user| %>
-    <%= bootstrap_form_tag(url: '#', method: :patch) do %>
-        <%= render partial: 'friendships/user', locals: { user: user} %>
-        <%= submit_tag('Decline request', class: 'btn btn-primary btn-sm') %>
-    <% end %>
-<% end %>

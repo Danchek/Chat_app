@@ -1,0 +1,16 @@
+.card{:id => "message_block_#{message.id}"}
+  .card-block
+    .row
+      .col-md-1
+        = image_tag(message.user.avatar(:thumb), class: 'user-photo')
+      .col-md-8
+        %p.card-text
+          %span.text-muted
+            = message.user.nickname
+            at #{message.timestamp} says
+          %br/
+          %span{:id => "message_#{message.id}"}= message.body
+      %div
+        - if current_user.id == message.user.id
+          %button.button_edit{"data-message-id" => "#{message.id}", :id => "button_#{message.id}", :type => "submit"} Edit
+          %button.button_delete{"data-message-id" => "#{message.id}", :id => "button_deleted_#{message.id}", :type => "submit"} Delete

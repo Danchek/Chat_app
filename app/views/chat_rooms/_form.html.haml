@@ -1,0 +1,6 @@
+= bootstrap_form_for @chat_room do |f|
+  .form-group
+    = f.text_field :title, autofocus: true, class: 'form-control'
+  %div
+    = f.select :chat_type, [['Public chat', 'public_chat'], ['Group chat', 'group_chat']]
+  = f.submit 'Submit', class: 'btn btn-primary'

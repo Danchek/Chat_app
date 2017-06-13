@@ -14,6 +14,8 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', github: "rails/sass-rails"
+# Use Haml for views
+gem 'haml-rails', '~> 0.9'
 
 # Use devise for authorization
 gem 'devise'

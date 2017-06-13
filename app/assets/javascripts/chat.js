@@ -1,6 +1,7 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function() {
 
     get_friends();
+    add_friend_to_chat();
 
     function add_friend() {
         $('.add_user_btn').click(function () {
@@ -9,7 +10,6 @@ $(document).ready(function () {
                 url: '',
                 data: ''
             }).success(function (html) {
-
             });
 
         });
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     function get_friends() {
         $('#modal_btn').click(function () {
-            var dataId = {'id': $(this).attr('data-id').toString()}
+            var dataId = {'id': $(this).attr('data-id').toString()};
             $.ajax({
                 type: "GET",
                 url: '/friends/for_chat',
@@ -27,5 +27,23 @@ $(document).ready(function () {
                 add_friend();
             });
         });
+    }
+
+    function add_friend_to_chat() {
+        $('.add-friend-to-chat').submit(function () {
+            var valuesToSubmit = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: valuesToSubmit,
+                success: function (html) {
+                    alert('Form has been sent successfully!');
+                },
+                error: function (json) {
+                    alert('Please check all mandatory fields before submit form');
+                }
+            });
+            return false; // prevents normal behaviour
+        })
     }
 });

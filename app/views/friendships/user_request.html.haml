@@ -1,0 +1,5 @@
+%h1 Your requests:
+- @users.each do |user|
+  = bootstrap_form_tag(url: friend_update_request_path(user), method: :patch) do
+    = render partial: 'users/user', locals: { user: user}
+    = submit_tag('Decline request', name: 'btn_decline', class: 'btn btn-primary btn-sm')
